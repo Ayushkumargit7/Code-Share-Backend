@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
-import { useEffect } from 'react';
 
 const app = express();
 const server = createServer(app);
