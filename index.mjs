@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
   // Handle incoming chat messages
   socket.on('user-message', (message) => {
     console.log('message sent');
-    io.emit('user-message', message); // Broadcast the message to all connected clients
+    socket.broadcast.emit('user-message', message); // Broadcast the message to all connected clients
   });
 
   // Handle code language
@@ -39,9 +39,7 @@ io.on('connection', (socket) => {
   // Handle code updates
   socket.on('code-update', (code) => {
     console.log('code updated');
-    // console.log(code);
-
-    io.emit('code-update', code); // Broadcast the updated code to all connected clients
+    socket.broadcast.emit('code-update', code); // Broadcast the updated code to all connected clients
   });
 
   // Handle code output
